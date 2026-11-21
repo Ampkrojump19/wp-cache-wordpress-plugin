@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ampkrojump19.github.io/wp-cache-wordpress-plugin/sitemap.xml
