@@ -1,0 +1,18 @@
+.harriercache-breadcrumbs {
+    font-size: .875em;
+    margin: 0 0 1.25em;
+    opacity: .85;
+}
+
+.harriercache-breadcrumbs a {
+    text-decoration: none;
+}
+
+.harriercache-breadcrumbs a:hover,
+.harriercache-breadcrumbs a:focus {
+    text-decoration: underline;
+}
+
+.harriercache-breadcrumbs span {
+    font-weight: 600;
+}

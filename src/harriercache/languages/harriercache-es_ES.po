@@ -1,0 +1,98 @@
+# HarrierCache UI strings. Machine-assisted translation.
+msgid ""
+msgstr ""
+"Project-Id-Version: HarrierCache 2.3.0\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Dashboard"
+msgstr "Panel"
+
+msgid "Cache"
+msgstr "CachÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©"
+
+msgid "Optimize"
+msgstr "Optimizar"
+
+msgid "Database"
+msgstr "Base de datos"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Redirects"
+msgstr "Redirecciones"
+
+msgid "Cloud"
+msgstr "Nube"
+
+msgid "Diagnostics"
+msgstr "DiagnÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³stico"
+
+msgid "Tools"
+msgstr "Herramientas"
+
+msgid "Overview"
+msgstr "Resumen"
+
+msgid "Cache hit rate"
+msgstr "Tasa de aciertos"
+
+msgid "Average load"
+msgstr "Carga media"
+
+msgid "Cached pages"
+msgstr "PÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ginas en cachÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©"
+
+msgid "Cache size"
+msgstr "TamaÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±o de cachÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©"
+
+msgid "Purge cache"
+msgstr "Vaciar cachÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©"
+
+msgid "Page cache"
+msgstr "CachÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© de pÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡gina"
+
+msgid "Enable cache"
+msgstr "Activar cachÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©"
+
+msgid "Lifetime"
+msgstr "DuraciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n"
+
+msgid "seconds"
+msgstr "segundos"
+
+msgid "Excluded paths"
+msgstr "Rutas excluidas"
+
+msgid "Images"
+msgstr "ImÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡genes"
+
+msgid "Generate missing WebP copies"
+msgstr "Generar copias WebP faltantes"
+
+msgid "Run maintenance now"
+msgstr "Ejecutar mantenimiento"
+
+msgid "Add redirect"
+msgstr "AÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±adir redirecciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n"
+
+msgid "Nothing recorded yet."
+msgstr "Nada registrado."
+
+msgid "Run cloud check"
+msgstr "Ejecutar anÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡lisis en la nube"
+
+msgid "Enable and run"
+msgstr "Activar y ejecutar"
+
+msgid "Download snapshot"
+msgstr "Descargar instantÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡nea"
+
+msgid "Save changes"
+msgstr "Guardar cambios"
+
+msgid "Settings saved."
+msgstr "Ajustes guardados."
