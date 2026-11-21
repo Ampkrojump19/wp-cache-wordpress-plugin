@@ -1,0 +1,98 @@
+# HarrierCache UI strings. Machine-assisted translation.
+msgid ""
+msgstr ""
+"Project-Id-Version: HarrierCache 2.3.0\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+msgid "Cache"
+msgstr "Cache"
+
+msgid "Optimize"
+msgstr "Optimiser"
+
+msgid "Database"
+msgstr "Base de donnÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©es"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Redirects"
+msgstr "Redirections"
+
+msgid "Cloud"
+msgstr "Cloud"
+
+msgid "Diagnostics"
+msgstr "Diagnostic"
+
+msgid "Tools"
+msgstr "Outils"
+
+msgid "Overview"
+msgstr "AperÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§u"
+
+msgid "Cache hit rate"
+msgstr "Taux de cache"
+
+msgid "Average load"
+msgstr "Temps de chargement moyen"
+
+msgid "Cached pages"
+msgstr "Pages en cache"
+
+msgid "Cache size"
+msgstr "Taille du cache"
+
+msgid "Purge cache"
+msgstr "Vider le cache"
+
+msgid "Page cache"
+msgstr "Cache de page"
+
+msgid "Enable cache"
+msgstr "Activer le cache"
+
+msgid "Lifetime"
+msgstr "DurÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©e de vie"
+
+msgid "seconds"
+msgstr "secondes"
+
+msgid "Excluded paths"
+msgstr "Chemins exclus"
+
+msgid "Images"
+msgstr "Images"
+
+msgid "Generate missing WebP copies"
+msgstr "GÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©nÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©rer les copies WebP manquantes"
+
+msgid "Run maintenance now"
+msgstr "Lancer la maintenance"
+
+msgid "Add redirect"
+msgstr "Ajouter une redirection"
+
+msgid "Nothing recorded yet."
+msgstr "Rien d'enregistrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©."
+
+msgid "Run cloud check"
+msgstr "Lancer l'analyse cloud"
+
+msgid "Enable and run"
+msgstr "Activer et lancer"
+
+msgid "Download snapshot"
+msgstr "TÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©charger l'instantanÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©"
+
+msgid "Save changes"
+msgstr "Enregistrer"
+
+msgid "Settings saved."
+msgstr "RÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©glages enregistrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©s."
