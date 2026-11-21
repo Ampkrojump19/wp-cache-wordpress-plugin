@@ -1,5 +1,8 @@
 # HarrierCache — Speed & SEO
 
+**[Live page](https://ampkrojump19.github.io/wp-cache-wordpress-plugin/)** · **[Download](https://github.com/Ampkrojump19/wp-cache-wordpress-plugin/releases/latest)** · free · MIT · no account
+
+
 ![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-blue)
 ![PHP](https://img.shields.io/badge/PHP-7.4%2B-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
