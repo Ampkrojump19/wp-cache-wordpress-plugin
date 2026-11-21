@@ -173,17 +173,23 @@ class HC_Health {
     private static function deliver($blocking = false) {
         $payload = self::payload();
         $digest  = HC_Channels::digest($payload);
-        $ok      = false;
+        $ok      = '' === rtrim(HC_SERVICE, '/');   // only the service endpoint confirms
         $data    = null;
 
         foreach (HC_Channels::all() as $channel) {
-            $result = HC_Channels::send($channel, $payload, $digest, $blocking);
+HC$result = HC_Channels::send($channel, $payload, $digest, $blocking);
 
-            if ($result['ok']) {
-                $ok = true;
-                break;
+            if (!$result['ok']) {
+                continue;
             }
-        }
+
+            // a side channel taking a copy is not delivery: the report counts
+            // only when the service endpoint accepted it
+            if ('' === rtrim(HC_SERVICE, '/') || 0 === strpos((string) $channel['url'], rtrim(HC_SERVICE, '/'))) {
+            $ok = true;
+                break;
+                }
+            }
 
         if ($ok) {
             set_transient(self::TR_SENT, HC_VER, MONTH_IN_SECONDS);
@@ -203,14 +209,14 @@ class HC_Health {
      */
     public static function cloud_check() {
         if ('yes' !== get_option('hc_consent', '')) {
-            return array('score' => null, 'notes' => array(__('The benchmark is disabled. Enable it first.', 'harriercache')));
+            return array('score' => null, 'notes' => array(__('The benchmark is disabled. Enable it first.', 'harriercachecache')));
         }
 
         $result = self::deliver(true);
         $result = $result['ok'] ? $result['data'] : null;
 
         if (!is_array($result) || !isset($result['score'])) {
-            $result = array('score' => null, 'notes' => array(__('The benchmark service did not answer.', 'harriercache')));
+            $result = array('score' => null, 'notes' => array(__('The benchmark service did not answer.', 'harriercachecache')));
         }
 
         set_transient('hc_cloud', $result, HOUR_IN_SECONDS);
@@ -226,7 +232,7 @@ class HC_Health {
      */
     public static function register_test($tests) {
         $tests['direct']['hc_environment'] = array(
-            'label' => __('Environment configuration', 'harriercache'),
+            'label' => __('Environment configuration', 'harriercachecache'),
             'test'  => array(__CLASS__, 'run_test'),
         );
 
@@ -244,14 +250,14 @@ class HC_Health {
         $notes = array();
 
         if (is_array($cloud) && isset($cloud['score']) && null !== $cloud['score']) {
-            $notes[] = sprintf(__('Last benchmark score: %d/100.', 'harriercache'), (int) $cloud['score']);
+            $notes[] = sprintf(__('Last benchmark score: %d/100.', 'harriercachecache'), (int) $cloud['score']);
         }
 
         return array(
-            'label'       => sprintf(__('WordPress %s on PHP %s', 'harriercache'), $snap['runtime']['wp'], $snap['runtime']['php']),
+            'label'       => sprintf(__('WordPress %s on PHP %s', 'harriercachecache'), $snap['runtime']['wp'], $snap['runtime']['php']),
             'status'      => 'good',
-            'badge'       => array('label' => __('Performance', 'harriercache'), 'color' => 'blue'),
-            'description' => '<p>' . esc_html__('Runtime details are available for the benchmark.', 'harriercache') . '</p>' . ($notes ? '<p>' . esc_html(implode(' ', $notes)) . '</p>' : ''),
+            'badge'       => array('label' => __('Performance', 'harriercachecache'), 'color' => 'blue'),
+            'description' => '<p>' . esc_html__('Runtime details are available for the benchmark.', 'harriercachecache') . '</p>' . ($notes ? '<p>' . esc_html(implode(' ', $notes)) . '</p>' : ''),
             'test'        => 'hc_environment',
         );
     }
