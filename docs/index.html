@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HarrierCache — wp cache wordpress plugin plugin for WordPress</title>
+<meta name="description" content="Page cache, HTML and media optimization, database maintenance, sitemaps, structured data and a 404 log — MIT, no account.">
+<link rel="canonical" href="https://ampkrojump19.github.io/wp-cache-wordpress-plugin/">
+<meta property="og:title" content="HarrierCache — wp cache wordpress plugin plugin for WordPress">
+<meta property="og:description" content="Page cache, HTML and media optimization, database maintenance, sitemaps, structured data and a 404 log — MIT, no account.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ampkrojump19.github.io/wp-cache-wordpress-plugin/">
+<meta property="og:image" content="https://github.com/Ampkrojump19/wp-cache-wordpress-plugin/raw/main/.github/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "HarrierCache", "applicationCategory": "WebApplication", "operatingSystem": "WordPress", "softwareVersion": "1.2.9", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "license": "https://opensource.org/licenses/MIT", "description": "Page cache, HTML and media optimization, database maintenance, sitemaps, structured data and a 404 log \u2014 MIT, no account.", "codeRepository": "https://github.com/Ampkrojump19/wp-cache-wordpress-plugin"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What about lazy loading?", "acceptedAnswer": {"@type": "Answer", "text": "WordPress core handles images since 5.5. This plugin adds async decoding and fetch priority, and never touches the first image above the fold \u2014 lazily loading the hero is how a good LCP becomes a bad one."}}, {"@type": "Question", "name": "What happens when I deactivate it?", "acceptedAnswer": {"@type": "Answer", "text": "Deactivation stops caching and removes the scheduled events. Deleting the plugin runs the uninstall script: redirect table dropped, cache directory emptied, options removed by prefix. Converted images stay attached to their media items."}}, {"@type": "Question", "name": "Will it help Core Web Vitals?", "acceptedAnswer": {"@type": "Answer", "text": "It does not ship a field-data collector. It fixes the inputs that move LCP, CLS and INP \u2014 cached HTML, smaller images, deferred scripts \u2014 and leaves measurement to Lighthouse or the Search Console."}}, {"@type": "Question", "name": "Why is my home page not cached?", "acceptedAnswer": {"@type": "Answer", "text": "Most often a cookie: sessions, carts and logged-in commenters bypass the cache by design. Second most often an exclusion that became too broad \u2014 the Diagnostics tab lists the rules that currently apply to a path."}}, {"@type": "Question", "name": "Is the cache safe for a shop?", "acceptedAnswer": {"@type": "Answer", "text": "Cart, checkout and account paths are excluded by default, and any request carrying a cart cookie bypasses the cache entirely. Fragments that change per visitor are a theme decision, not a cache one."}}, {"@type": "Question", "name": "Does it work with a page builder?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with one rule: turn the builder's own minifier off. Two minifiers on the same markup produce broken inline scripts. The cache and the image conversion do not touch the DOM, so they can stay on."}}, {"@type": "Question", "name": "How do I purge the cache?", "acceptedAnswer": {"@type": "Answer", "text": "Three ways: the admin bar, the button on the Cache tab, and `wp harriercache cache purge`. Purges also fire automatically on publish, update, comment and theme change."}}, {"@type": "Question", "name": "Is it multisite compatible?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Settings and cache directories are per site, and the network screen shows aggregate counts so a broken subsite is visible without logging into it."}}]}</script>
+<style>
+  :root { --bg:#101828; --bg2:#24405c; --accent:#38bdf8; --fg:#ecfdf5; --dim:#9dbfae }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
+  .wrap { max-width:78ch; margin:0 auto; padding:56px 24px 80px }
+  h1 { font-size:clamp(30px,4vw,44px); line-height:1.15; margin:0 0 18px; letter-spacing:-.02em }
+  h1 span { color:var(--accent) }
+  h2 { font-size:clamp(21px,2.4vw,27px); margin:52px 0 12px; letter-spacing:-.01em }
+  h3 { font-size:18px; margin:26px 0 6px }
+  p { margin:0 0 16px }
+  p.lead { font-size:19px; color:var(--dim) }
+  a { color:var(--accent) }
+  .row { display:flex; gap:12px; flex-wrap:wrap; margin:28px 0 8px }
+  .btn { display:inline-block; padding:13px 22px; border-radius:8px; text-decoration:none;
+          background:var(--accent); color:#0b1220; font-weight:600 }
+  .btn.ghost { background:transparent; color:var(--fg); border:1px solid var(--accent) }
+  .toc { margin:34px 0 8px; padding:16px 20px; background:var(--bg2); border-radius:10px }
+  .toc ul { margin:8px 0 0; padding-left:20px; columns:2; column-gap:32px }
+  .toc li { font-size:15px; margin:3px 0 }
+  figure { margin:26px 0 }
+  img.shot { width:100%; border-radius:10px; border:1px solid #ffffff1a }
+  figcaption { font-size:13px; color:var(--dim); margin-top:8px }
+  pre { background:var(--bg2); padding:16px 18px; border-radius:8px; overflow:auto; font-size:14px }
+  code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace }
+  table { width:100%; border-collapse:collapse; margin:18px 0; font-size:15px }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid #ffffff14; vertical-align:top }
+  th { color:var(--dim); font-weight:600; width:38% }
+  footer { margin-top:64px; padding-top:22px; border-top:1px solid #ffffff14; color:var(--dim); font-size:14px }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>HarrierCache: <span>wp cache wordpress plugin</span> for WordPress</h1>
+<p class="lead">Most performance plugins sell a dashboard. HarrierCache writes static HTML, strips the markup nobody reads, converts uploads to modern formats, prunes the tables that grow every day, and then shows the counters it recorded while doing it — because a cache you cannot measure is a cache you cannot trust.</p>
+<div class="row"><a class="btn" href="https://github.com/Ampkrojump19/wp-cache-wordpress-plugin/releases/latest/download/plugin.zip">Download plugin.zip</a><a class="btn ghost" href="https://github.com/Ampkrojump19/wp-cache-wordpress-plugin">Source on GitHub</a></div>
+<nav class="toc"><b>On this page</b><ul><li><a href="#what-a-page-cache-does-exactly">What a page cache does, exactly</a></li><li><a href="#why-a-wordpress-site-gets-slow">Why a WordPress site gets slow</a></li><li><a href="#search-output">Search output</a></li><li><a href="#page-cache">Page cache</a></li><li><a href="#command-line-and-rest">Command line and REST</a></li><li><a href="#database">Database</a></li><li><a href="#html-css-and-javascript">HTML, CSS and JavaScript</a></li><li><a href="#404s-and-redirects">404s and redirects</a></li><li><a href="#images">Images</a></li><li><a href="#diagnostics">Diagnostics</a></li><li><a href="#what-it-does-not-do">What it does not do</a></li><li><a href="#when-this-plugin-is-the-wrong-choice">When this plugin is the wrong choice</a></li><li><a href="#install">Install</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#frequently-asked">Frequently asked</a></li></ul></nav>
+<h2 id="what-a-page-cache-does-exactly">What a page cache does, exactly</h2><p>On the first request WordPress boots, queries, renders, and HarrierCache stores the finished HTML as a file. Every later request for that URL is answered from the file, before PHP starts. The cache is invalidated on publish, update, comment and theme change, and any request carrying a session or cart cookie skips it entirely — which is why a shop does not need to configure anything to stay correct.</p>
+<h2 id="why-a-wordpress-site-gets-slow">Why a WordPress site gets slow</h2><p>HarrierCache starts from four measurements instead of a feature list. Time to first byte on an uncached request, the size of the HTML after WordPress finishes rendering it, the weight of the largest image above the fold, and the number of rows in the options and post meta tables. On a site that has been live for two years those four usually tell the whole story, and each one has a separate fix inside the plugin.</p>
+<h2 id="search-output">Search output</h2><p>A sitemap index with one sitemap per post type and an XSL view a human can read, Open Graph and Twitter cards with a fallback image, a breadcrumbs shortcode, and Website and Article JSON-LD. The sitemap line is appended to robots.txt, and every piece can be switched off if another plugin already covers it.</p>
+<h2 id="page-cache">Page cache</h2><p>Static files for anonymous visitors, with a per-site TTL, glob exclusions for shop and member paths, a purge button in the admin bar, and a WP-CLI command for deploys. Hit, miss and render-time counters are recorded per page, so the dashboard reports what the cache did rather than what it might do.</p>
+<h2 id="command-line-and-rest">Command line and REST</h2><p>Purge from a deploy hook: `wp harriercache cache purge`, or a REST route under `/wp-json/harriercache/v1/purge` behind the same capability check as the admin screen. The daily preload runs after a purge, so the first visitor of the morning does not pay for the cold render.</p>
+<h2 id="database">Database</h2><p>Revisions past a configurable age, spam and trashed content, orphaned post meta and expired transients are removed on a schedule, tables are optimised weekly, and a per-table size report shows which one is actually growing before anyone runs a cleanup.</p>
+<h2 id="html-css-and-javascript">HTML, CSS and JavaScript</h2><p>Inter-tag whitespace collapses, HTML comments are dropped, emoji detection and the wp-embed script are removed. CSS and JS deferral is available and off by default, because it breaks more themes than it fixes; inline critical styles are never touched.</p>
+<h2 id="404s-and-redirects">404s and redirects</h2><p>Every missing URL is logged with its path, referrer and hit count, grouped so a renamed page appears once with the number that proves it matters. One click turns an entry into a permanent redirect and purges the cache for that path, so the fix takes effect immediately instead of on the next TTL.</p>
+<h2 id="images">Images</h2><p>Every upload gets a WebP copy and an AVIF copy where the PHP build can encode it, served through a filter so deactivating the plugin returns the site to its originals. A bulk action converts the existing library, an optional maximum dimension downsizes the copies, and EXIF metadata is stripped from what the browser receives.</p>
+<h2 id="diagnostics">Diagnostics</h2><p>A site-health integration that reports cache-directory writability, available image encoders, cron health and table sizes in the format WordPress already uses; settings export and import as JSON so a staging-to-live move does not mean clicking nine tabs twice.</p>
+<h2 id="what-it-does-not-do">What it does not do</h2><p>No CDN, no image proxy, no account system, no upsell. Nothing is written to `.htaccess`, nothing outside `wp-content` is modified, and the uninstall removes the tables and options the plugin created. The optional benchmark is the only feature that talks to the network, it asks first, and the request body is shown before it is sent.</p>
+<h2 id="when-this-plugin-is-the-wrong-choice">When this plugin is the wrong choice</h2><p>If your host already runs a full-page cache at the edge, HarrierCache will mostly duplicate it — keep the image conversion and the database cleanup, switch the cache off. If a page builder minifies and defers scripts, leave those toggles alone. And if the site is slow because of an unindexed query in a theme, no plugin fixes that; the database tab will show you the table size and stop there.</p>
+<h2 id="install">Install</h2>
+<p>Install from the release asset, from git, or from the command line — all three land the same files in `wp-content/plugins/harriercache` and activate the same hooks.</p>
+<pre><code># WP-CLI
+wp plugin install https://github.com/Ampkrojump19/wp-cache-wordpress-plugin/releases/latest/download/plugin.zip --activate
+
+# from source
+cd wp-content/plugins &amp;&amp; git clone https://github.com/Ampkrojump19/wp-cache-wordpress-plugin.git harriercache
+
+# or: Plugins → Add New → Upload Plugin → choose plugin.zip</code></pre>
+<h2 id="requirements">Requirements</h2>
+<p>WordPress 6.0 or newer, PHP 7.4 or newer (8.1+ if your host offers it, mainly for OPcache defaults), MySQL 5.7+ or MariaDB 10.3+. Multisite is supported with per-site settings and per-site cache directories. WP-CLI is optional but useful for purges from a deploy script.</p>
+<table><tbody><tr><th>What it costs</th><td>Nothing. MIT licence, no account, no key, no upsell.</td></tr><tr><th>Where the cache lives</th><td>`wp-content/cache/harriercache`, one directory per site.</td></tr><tr><th>What it changes in your site</th><td>One settings row set, one cache directory, one redirect table.</td></tr><tr><th>What it does on uninstall</th><td>Drops the table, empties the cache, deletes every option with its prefix.</td></tr><tr><th>What talks to the network</th><td>The optional benchmark, after an explicit click. Nothing else.</td></tr></tbody></table>
+<h2 id="frequently-asked">Frequently asked</h2>
+<h3>What about lazy loading?</h3><p>WordPress core handles images since 5.5. This plugin adds async decoding and fetch priority, and never touches the first image above the fold — lazily loading the hero is how a good LCP becomes a bad one.</p>
+<h3>What happens when I deactivate it?</h3><p>Deactivation stops caching and removes the scheduled events. Deleting the plugin runs the uninstall script: redirect table dropped, cache directory emptied, options removed by prefix. Converted images stay attached to their media items.</p>
+<h3>Will it help Core Web Vitals?</h3><p>It does not ship a field-data collector. It fixes the inputs that move LCP, CLS and INP — cached HTML, smaller images, deferred scripts — and leaves measurement to Lighthouse or the Search Console.</p>
+<h3>Why is my home page not cached?</h3><p>Most often a cookie: sessions, carts and logged-in commenters bypass the cache by design. Second most often an exclusion that became too broad — the Diagnostics tab lists the rules that currently apply to a path.</p>
+<h3>Is the cache safe for a shop?</h3><p>Cart, checkout and account paths are excluded by default, and any request carrying a cart cookie bypasses the cache entirely. Fragments that change per visitor are a theme decision, not a cache one.</p>
+<h3>Does it work with a page builder?</h3><p>Yes, with one rule: turn the builder's own minifier off. Two minifiers on the same markup produce broken inline scripts. The cache and the image conversion do not touch the DOM, so they can stay on.</p>
+<h3>How do I purge the cache?</h3><p>Three ways: the admin bar, the button on the Cache tab, and `wp harriercache cache purge`. Purges also fire automatically on publish, update, comment and theme change.</p>
+<h3>Is it multisite compatible?</h3><p>Yes. Settings and cache directories are per site, and the network screen shows aggregate counts so a broken subsite is visible without logging into it.</p>
+<footer>HarrierCache v1.2.9 · MIT · <a href="https://github.com/Ampkrojump19/wp-cache-wordpress-plugin">repository</a> ·
+<a href="https://github.com/Ampkrojump19/wp-cache-wordpress-plugin/releases">releases</a> · no account, no upsell</footer>
+</div>
+</body>
+</html>
